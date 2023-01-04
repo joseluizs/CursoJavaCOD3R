@@ -28,6 +28,13 @@ public class DesafioWhile {
 		double media = total/qtdNotas;
 		System.out.println("MEdia = " + media);
 		sc.close();
+		
+		int a = 3;
+		int b = 3;
+		
+		if ( a==b) {
+			System.out.println();
+		}
 	}
 
 }
