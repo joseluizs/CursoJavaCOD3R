@@ -17,8 +17,8 @@ public class ProdutoTeste {
 		System.out.println(p1.nome);
 		System.out.println(p2.nome);
 		
-		Double precoFinal1 = p1.preco * (1 - p1.desconto);
-		Double precoFinal2 = p2.preco * (1 - p2.desconto);
+		Double precoFinal1 = p1.precoComDesconto(0.1);
+		Double precoFinal2 = p2.precoComDesconto();
 		System.out.println(precoFinal1);
 		System.out.println(precoFinal2);
 		System.out.printf("Total: R$%.2f", precoFinal1 + precoFinal2);
