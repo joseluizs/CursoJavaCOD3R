@@ -14,9 +14,9 @@ public class DataTeste {
 		dt1.mes = 11;
 		dt1.ano = 2021;
 		
-		System.out.printf("%d/%d/%d", dt.dia, dt.mes, dt.ano);
-		System.out.println();
-		System.out.printf("%d/%d/%d", dt1.dia, dt1.mes, dt1.ano);
+		System.out.println(dt.obterDataFormatada());
+		System.out.println(dt1.obterDataFormatada());
+		
 	}
 
 }
