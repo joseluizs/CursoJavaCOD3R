@@ -20,7 +20,12 @@ public class Exercicio {
 		for (int i = 0; i < notasAlunoA.length; i++) {
 			totalAlunoA += notasAlunoA[i];
 		}
-		System.out.println("Media: " + totalAlunoA / notasAlunoA.length);
+		System.out.println("Media com for normal: " + totalAlunoA / notasAlunoA.length);
+		
+		for (double notasA : notasAlunoA) {
+			System.out.println(notasA);
+		}
+		System.out.println("Media com foreach: " + totalAlunoA / notasAlunoA.length);
 		
 		
 		double[] notasAlunoB = {6.9, 8.9, 5.5, 10};
@@ -29,6 +34,12 @@ public class Exercicio {
 			totalAlunoB += notasAlunoB[i];
 		}
 		System.out.println("Media: " + totalAlunoB / notasAlunoB.length);
+		
+		for (double notasB : notasAlunoB) {
+			System.out.println(notasB);
+		}
+		System.out.println("Media com foreach: " + totalAlunoB / notasAlunoB.length);
+		
 	}
 
 }
