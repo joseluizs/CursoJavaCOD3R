@@ -9,7 +9,7 @@ public class Cliente {
 	final List<Compra> compras = new ArrayList<>();
 	
 	Cliente(String nome){
-		this.nome = nome;
+		this.nome = nome; 
 	}
 
 	void adicionarCompra(Compra compra) {
