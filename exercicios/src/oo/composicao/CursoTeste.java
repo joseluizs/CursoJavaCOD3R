@@ -25,6 +25,7 @@ public class CursoTeste {
 			System.out.println("Estou matriculado no curso " + curso1.nome);
 			System.out.println("e meu nome é " + aluno.nome);
 		}
+		
 		System.out.println();
 		for (Aluno aluno : curso3.alunos) {
 			System.out.println("Estou matriculado no curso " + curso3.nome);
