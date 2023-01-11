@@ -6,7 +6,7 @@ public class Ferrari extends Carro {
 		this(315);
 	}
 
-	Ferrari(int velcidadeMaxima) {
+	public Ferrari(int velcidadeMaxima) {
 		super(velcidadeMaxima);
 		delta = 15;
 	}
