@@ -12,7 +12,7 @@ public class AppCarro {
 		c.acelerar();
 		System.out.println(c);
 		
-		Carro f = new Ferrari();
+		Carro f = new Ferrari(300);
 		f.acelerar();
 		System.out.println(f);
 		f.acelerar();
