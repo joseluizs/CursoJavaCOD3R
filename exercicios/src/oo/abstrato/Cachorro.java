@@ -1,10 +1,12 @@
 package oo.abstrato;
 
-public class Cachorro extends Mamifero{
+public class Cachorro extends Mamifero {
 
-	/*
-	 * @Override public String mover() { return "usando as patas"; }
-	 */
+	@Override
+	public String mover() {
+		return "usando as patas";
+	}
+
 	@Override
 	public String mamar() {
 		return "Tomando leite:";
