@@ -2,7 +2,7 @@ package lambdas;
 
 import java.util.function.Predicate;
 
-public class Predicado {
+public class PredicadoPredicate {
 	
 	public static void main(String[] args) {
 		Predicate<Produto> isCaro = p -> (p.preco * (1 - p.desconto)) >= 750;
