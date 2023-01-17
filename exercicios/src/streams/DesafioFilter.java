@@ -23,7 +23,6 @@ public class DesafioFilter {
 		Predicate<Produto> megaProm = p -> p.desconto >= 0.30;
 		Predicate<Produto> freteGra = p -> p.valorFrete >= 0;
 		Predicate<Produto> prodRelevane = p -> p.preco >= 500;
-		
 		Function<Produto, String> chamadaPromo = p -> "Aproveite! " + p.nome + " por R$: "	+p.preco;
 		lp.stream()
 			.filter(megaProm)
