@@ -4,8 +4,6 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.function.Predicate;
 
-import org.junit.platform.engine.support.discovery.SelectorResolver.Match;
-
 public class Tabuleiro {
 
 	private int linhas;
@@ -24,6 +22,18 @@ public class Tabuleiro {
 		sortearMinas();
 	}
 
+	public void abrir(int linha, int coluna) {
+		campos.parallelStream()
+		.filter(c -> c.getLinha() == linha && c.getColuna() == coluna)
+		.findFirst().ifPresent(c -> c.abrir());
+	}
+	
+	public void alternarMarcacao(int linha, int coluna) {
+		campos.parallelStream()
+		.filter(c -> c.getLinha() == linha && c.getColuna() == coluna)
+		.findFirst().ifPresent(c -> c.alternarMarcacao());
+	}
+	
 	private void gerarCampos() {
 		for (int linha = 0; linha < linhas; linha++) {
 			for (int coluna = 0; coluna < colunas; coluna++) {
@@ -60,6 +70,18 @@ public class Tabuleiro {
 	}
 	
 	public String toString() {
+		StringBuilder sb = new StringBuilder();
 		
+		int i = 0;
+		for (int l = 0; l < linhas; l++) {
+			for (int c = 0; c < colunas; c++) {
+				sb.append(" ");
+				sb.append(campos.get(i));
+				sb.append(" ");
+				i++;
+			}
+			sb.append("\n");
+		}
+		return sb.toString();
 	}
 }
