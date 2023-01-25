@@ -55,10 +55,10 @@ public class TabuleiroConsole {
 				} else if ("2".equals(digitado)) {
 					tabuleiro.alternarMarcacao(xy.next(), xy.next());
 				}
-				
 			}
 			System.out.println("Você ganhou!");
 		} catch (ExplosaoException e) {
+			System.out.println(tabuleiro);
 			System.out.println("Você perdeu!");
 		}	
 	}
