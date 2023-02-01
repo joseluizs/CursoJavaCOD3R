@@ -7,7 +7,7 @@ public class Memoria {
 	
 	@SuppressWarnings("unused")
 	private enum TipoComando{
-		ZERAR, NUMERO, DIV, MULT, SUB, SOMA, IGUAL, VIRGULA;
+		ZERAR, SINAL, NUMERO, DIV, MULT, SUB, SOMA, IGUAL, VIRGULA;
 	};
 	
 	private static final Memoria instancia = new Memoria();
@@ -41,6 +41,10 @@ public class Memoria {
 		
 		if (tc == null) {
 			return;
+		} else if (tc == TipoComando.SINAL && textoAtual.contains("-")) {
+			textoAtual = textoAtual.substring(1);
+		} else if (tc == TipoComando.SINAL && !textoAtual.contains("-")) {
+			textoAtual = "-" + textoAtual;
 		} else if (tc == TipoComando.ZERAR) {
 			textoAtual = "";
 			textoBuffer = "";
@@ -60,7 +64,7 @@ public class Memoria {
 	}
 
 	private String obterResultadoOperacao() {
-		if (ultimaOperacao == null) {
+		if (ultimaOperacao == null || ultimaOperacao == TipoComando.IGUAL) {
 			return textoAtual;
 		}
 		
@@ -105,6 +109,8 @@ public class Memoria {
 				return TipoComando.SUB;
 			} else if ("=".equals(texto)) {
 				return TipoComando.IGUAL;
+			} else if ("±".equals(texto)) {
+				return TipoComando.SINAL;
 			} else if (",".equals(texto) && !textoAtual.contains(",")) {
 				return TipoComando.VIRGULA;
 			}
