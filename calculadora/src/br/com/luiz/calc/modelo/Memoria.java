@@ -6,7 +6,9 @@ import java.util.List;
 public class Memoria {
 	
 	@SuppressWarnings("unused")
-	private enum TipoComando{ZERAR, NUMERO, DIV, MULT, SUB, SOMA, IGUAL, VIRGULA}
+	private enum TipoComando{
+		ZERAR, NUMERO, DIV, MULT, SUB, SOMA, IGUAL, VIRGULA;
+	};
 	
 	private static final Memoria instancia = new Memoria();
 	
@@ -47,9 +49,37 @@ public class Memoria {
 		} else if (tc == TipoComando.NUMERO || tc == TipoComando.VIRGULA) {
 			textoAtual = substituir ? texto : textoAtual + texto;
 			substituir = false;
+		} else {
+			substituir = true;
+			textoAtual = obterResultadoOperacao();
+			textoBuffer = textoAtual;
+			ultimaOperacao = tc;
 		}
 		
 		observadores.forEach(o -> o.valorAlterado(getTextoAtual()));
+	}
+
+	private String obterResultadoOperacao() {
+		if (ultimaOperacao == null) {
+			return textoAtual;
+		}
+		
+		double numeroBuffer = Double.parseDouble(textoBuffer.replace("," , "."));
+		double numeroAtual = Double.parseDouble(textoBuffer.replace("," , "."));
+		double resultado = 0;
+		
+		if (ultimaOperacao == TipoComando.SOMA) {
+			resultado = numeroBuffer + numeroAtual;
+		} else if (ultimaOperacao == TipoComando.SUB) {
+			resultado = numeroBuffer - numeroAtual;
+		} else if (ultimaOperacao == TipoComando.MULT) {
+			resultado = numeroBuffer * numeroAtual;
+		} else if (ultimaOperacao == TipoComando.DIV) {
+			resultado = numeroBuffer / numeroAtual;
+		}
+		String texto = Double.toString(resultado).replace(".", ",");
+		boolean inteiro = texto.endsWith(",0");
+		return inteiro ? texto.replace(",0", "") : texto;
 	}
 
 	private TipoComando detectarTipoComando(String texto) {
