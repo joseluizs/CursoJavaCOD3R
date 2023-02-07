@@ -1,16 +1,2 @@
 INDEX VERSION 1.131+D:\CursoJavaCOD3R\.metadata\.plugins\org.eclipse.jdt.core
-3238876932.index
-768189162.index
-1710246320.index
-1532692240.index
-1461048113.index
-1495751798.index
-764535017.index
 1865797976.index
-4207240212.index
-3086879888.index
-2378175161.index
-3386109216.index
-802661720.index
-2021492419.index
-2660908370.index
