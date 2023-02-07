@@ -31,12 +31,12 @@ public class DAO<E> {
 	}
 	
 	public DAO<E> fecharTransacao(){
-		em.getTransaction().begin();
+		em.getTransaction().commit();
 		return this;
 	}
 	
 	public DAO<E> abrirTransacao(){
-		em.getTransaction().commit();
+		em.getTransaction().begin();
 		return this;
 	}
 	
