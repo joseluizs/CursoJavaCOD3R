@@ -14,6 +14,7 @@ public class NovoAluno {
 		
 		dao.incluirAtomico(aluno);
 		dao.incluirAtomico(alunoBolsista);
+		dao.fechar();
 
 	}
 
