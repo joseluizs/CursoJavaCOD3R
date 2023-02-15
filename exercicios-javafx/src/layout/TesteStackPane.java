@@ -1,5 +1,6 @@
 package layout;
 
+import javafx.application.Platform;
 import javafx.scene.layout.StackPane;
 
 public class TesteStackPane extends StackPane {
@@ -23,6 +24,20 @@ public class TesteStackPane extends StackPane {
 			}
 		});
 		
+		Thread t = new Thread(() ->{
+			while (true) {
+				try {
+					Thread.sleep(3000);
+					Platform.runLater(() -> {
+						getChildren().get(0).toFront();	
+					});					
+				} catch (Exception e) {
+				}
+			}
+		});
+		
+		t.setDaemon(true);
+		t.start();
 	}
 
 }
