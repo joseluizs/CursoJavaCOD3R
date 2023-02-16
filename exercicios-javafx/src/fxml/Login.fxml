@@ -9,7 +9,7 @@
 	styleClass="login" hgap="15" vgap="15">
 	
 	<padding>
-		<Insets left="40" right="40" top="40" />
+		<Insets left="40" right="40" top="40" bottom="40"/>
 	</padding>
 	
 	<columnConstraints>
@@ -21,7 +21,13 @@
 		styleClass="login-titulo"
 		GridPane.columnIndex="0" GridPane.rowIndex="0"
 		GridPane.columnSpan="2"
-		GridPane.halignment="CENTER"></Label>
+		GridPane.halignment="CENTER">
+		
+		<GridPane.margin>
+			<Insets top="20" bottom="20"/>
+		</GridPane.margin>
+		
+	</Label>
 		
 	<Label text="Email:"
 		styleClass="login-form-label"
@@ -43,6 +49,11 @@
 		onAction="#entrar"
 		GridPane.columnSpan="2"
 		GridPane.halignment="CENTER">
+		
+		<GridPane.margin>
+			<Insets top="20" bottom="20"/>
+		</GridPane.margin>
+		
 	</Button>
 
 </GridPane>
