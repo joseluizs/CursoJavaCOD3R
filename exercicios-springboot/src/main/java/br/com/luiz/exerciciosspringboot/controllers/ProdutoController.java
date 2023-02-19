@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import br.com.luiz.exerciciosspringboot.model.entities.Produto;
 import br.com.luiz.exerciciosspringboot.model.repositories.ProdutoRepository;
+import jakarta.validation.Valid;
 
 @RestController
 @RequestMapping("/api/produtos")
@@ -17,7 +18,7 @@ public class ProdutoController {
 	private ProdutoRepository produtoRepository;
 
 	@PostMapping
-	public @ResponseBody Produto nvProduto(Produto produto) {
+	public @ResponseBody Produto nvProduto(@Valid Produto produto) {
 		produtoRepository.save(produto);
 		return produto;
 	}
